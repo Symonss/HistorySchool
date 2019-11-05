@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Course
+from .models import Course, Lesson
 from django.shortcuts import render, get_object_or_404
 
 def home(request):
@@ -8,4 +8,7 @@ def home(request):
 
 def course_detail(request, pk):
     course = get_object_or_404(Course, pk=pk)
-    return render(request, 'detail.html', {'course':course})
+    lessons = Lesson.objects.filter(course = course.pk)
+   
+    context = {'course':course, 'lessons':lessons}
+    return render(request, 'detail.html', context)
