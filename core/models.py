@@ -4,6 +4,9 @@ from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 import datetime
 from django.urls import reverse
+from mdeditor.fields import MDTextField
+from django.utils.html import mark_safe
+from markdown import markdown
 
 class Course(models.Model):
     name = models.CharField(max_length = 100)
@@ -23,11 +26,15 @@ class Lesson(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     description = models.TextField()
     duration = models.IntegerField()
-    content = models.TextField()
+    content =  MDTextField(null= True)
+    
 
     class Meta:
         verbose_name = 'lesson'
         verbose_name_plural = 'lessons'
+
+    def get_content_as_markdown(self):
+        return mark_safe(markdown(self.content, safe_mode='escape'))
 
     def __str__(self):
         return self.title
