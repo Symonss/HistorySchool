@@ -1,0 +1,12 @@
+body{
+    font-family: Ubuntu;
+
+}
+
+.card-details{
+    color:rgba(56, 56, 245, 0.945);
+}
+hr{
+    margin-top:4px;
+    margin-bottom: 0px;
+}

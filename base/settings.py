@@ -26,7 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'mdeditor',
 ]
+
+MARKDOWN_EDITOR_SKIN = 'simple'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
