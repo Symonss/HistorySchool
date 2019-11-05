@@ -120,7 +120,8 @@
                                                 weeks</span> | Amount: <span
                                                 class="card-details"><b>Ksh.{{course.amount}}</b></span></small>
                                     </p>
-                                    <button type="button" class="btn btn-primary btn-block">Learn Now!</button>
+                                    <a type="button" class="btn btn-primary text-white btn-block"
+                                        href="{% url 'course_detail' pk=course.pk %}">Learn Now!</a>
 
                                 </div>
                             </div>

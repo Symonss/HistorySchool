@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Course Detail</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <h2>{{course.name}}</h2>
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h4 class="text-center">Course Details</h4>
+                            <p>Course Name: {{course.name}}</p>
+                            <p>Course Level: {{course.level}}</p>
+                            <p>Course Duration: {{course.duration}} Weeks</p>
+                            <p>Course Amount: Ksh.{{course.amount}}</p>
+                            <p>Course Description: {{course.description}}</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4 class="text-center">Lessons</h4>
+
+                            <div id="accordion">
+                                {% for lesson in lessons %}
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                            <li>{{lesson.title}}</li>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            {{lesson.title}}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
