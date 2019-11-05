@@ -13,7 +13,7 @@ SECRET_KEY = "NE9?R!hF-%TSGi(#{HeR%&eSk0S/Iq"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jeremiahteachingandlearning.pythonanywhere.com','*']
 
 
 # Application definition
